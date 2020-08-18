@@ -1,0 +1,43 @@
+server:
+    servlet:
+        context-path: /cpip-api
+    port: 8201
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  datasource:
+      url: jdbc:oracle:thin:@prior-rds.cmbcolowaua6.ap-southeast-1.rds.amazonaws.com:1922:ORCL
+      username: prior_db
+      password: P@5sw0rd
+      driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+      database: oracle
+      show-sql: false
+      properties:
+          hibernate:
+              default_schema: PRIOR_DB
+              temp:
+                  use_jdbc_metadata_defaults: false
+  main:
+      allow-bean-definition-overriding: true
+---
+spring:
+  profiles: uat
+  datasource:
+      url: jdbc:oracle:thin:@prior-rds.cmbcolowaua6.ap-southeast-1.rds.amazonaws.com:1922:ORCL
+      username: prior_db
+      password: P@5sw0rd
+      driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+      database: oracle
+      show-sql: true
+      properties:
+          hibernate:
+              default_schema: PRIOR_DB
+              temp:
+                  use_jdbc_metadata_defaults: false
+  main:
+      allow-bean-definition-overriding: true
