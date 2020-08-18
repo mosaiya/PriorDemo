@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "CPIP_MS_PARAMETER_GROUP")
-public class ParamGroup {
+public class ParamGroup extends BaseEntity<ParamGroup> {
 		
 	@Id
     @SequenceGenerator(name = "param_group_id_seq",sequenceName = "CPIP_MS_PARAMETER_GROUP_SEQ",allocationSize = 1)
