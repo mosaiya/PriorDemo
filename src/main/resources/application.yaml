@@ -2,6 +2,7 @@ server:
     servlet:
         context-path: /prior-demo
     port: 8201
+
 spring:
   profiles:
     active: dev
